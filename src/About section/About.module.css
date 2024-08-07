@@ -1,24 +1,28 @@
+
 .container {
     min-width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0 0.5rem;
+    padding: 2rem 0.1rem;
     position: relative;
     overflow: hidden;
 }
-
 .Head {
     border-bottom: 1px solid hsla(60, 3%, 6%, 0.265);
     width: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     align-items: center;
     padding: 0 2%;
 }
-
+.Head_master{
+    width: 98%;
+    margin-top: 30px;
+    padding: 1rem 1rem;
+    border-radius: 0.2rem;
+    background: #243858;
+}
 .Head_master h1,
 .Head h1 {
     font-family: "Jost", sans-serif;
@@ -31,248 +35,178 @@
 .Head_master h1 {
     color: #8D8D8D;
 }
-
-.Head_master {
-    width: 98%;
-    padding: 2rem 1rem;
-    border-radius: 0.2rem;
-    position: absolute;
-    top: 3rem;
-    background: #243858;
-
-}
-
-.SeeMore {
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #E33B4E;
-    color: #FFFFFF;
-    padding: 10px 12px;
-    border-radius: 2px;
-    border: none;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 12px;
-    font-weight: 500;
-}
-
-button img {
-    width: 25px;
-    padding: 0 2px;
-}
-
 /* ////////// CONDITON STYLES /////////////// */
 
-.hide {
+.container .hide {
     display: none;
     /* Completely hide the element */
 }
 
-.hidden {
-    opacity: 0;
-    /* Completely hide the element */
-}
-
 /* ////////// CONDITON STYLES /////////////// */
 
+
+.about_container{
+    width: 95%;
+    background: #FFFFFF;
+    border-radius: 10px;
+    padding: 0.2rem;
+}
 .About {
-    /* background-image: url('../assets/web Images/Artboard4.png');
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed; */
-    background-color: #E7ECF0;
     color: #101012;
     display: flex;
     flex-direction: column;
-    align-items: center; 
+    align-items: center;
+    padding: 1rem 0.5rem
 }
 
-.AboutImg {
-    /* background-image: url('../assets/web Images/Artboard4.svg');
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed; */
-    background-color: #E7ECF0;
-    color: #101012;
+.top {
+    width: 100%;
+    padding: 1rem 0.1rem;
+}
+
+.image {
     display: flex;
-    flex-direction: column;
-    align-items: center; 
+    align-items: center;
     justify-content: center;
-    width: 98%;
+    width: 100%;
+    padding: 0.1rem 0.1rem;
+}
+
+.image img {
+    width: 100%;
 }
 
 
-  
-.about_btn{
+.texts {
     width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.texts .text_section {
+    max-width: 100%;
+}
+
+.bottom .texts .text_section {
+    max-width: 100%;
+}
+
+.bottom .texts  {
     display: flex;
     justify-content: center;
 }
-.About .Texts {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 25px;
-    padding: 1.2rem 3%;
-}
 
-.About .Texts a {
-    text-decoration: none;
-}
-
-span {
+.texts p {
     font-family: "Jost", sans-serif;
-    font-size: 18px;
-    font-weight: 700;
+    font-size: 14px;
+    font-weight: 400;
 }
 
-.shorttext {
-    color: #101012;
-}
-
-.Longtext {
-    color: #101012;
-}
-
-.subtitle {
-    font-family: "Jost", sans-serif;
-    font-size: 18px;
-    font-weight: 700;
-    margin-top: 100px;
-}
-
-.Images {
-    width: 100%;
-    display: flex;
-   justify-content: center;
-}
-
-.Images .cosobLogo5 {
-    width: 100%;
-}
-
-.Images .Artboard {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 40%;
-    height: 40%;
-    background: #E7ECF0;
-}
-
-/* .container .Texts{
-    padding: 10px;
-} */
-.container .Texts p {
+.texts h1 {
     font-family: "Jost", sans-serif;
     font-size: 16px;
+    font-weight: 700;
 }
 
-@media screen and (min-width: 425px) {
-    .container .SeeMore {
-        padding: 10px 14px;
-        font-size: 14px;
-        font-weight: 600;
-    }
+.bottom {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap-reverse;
+}
+.bottom .projects{
+    margin: 2rem;
+    padding: 0.3rem 0;
+    width: 70%;
+    background: #E33B4E;
+    color: #FFFFFF;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #E33B4E;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
 
-    .container .SeeMore img {
-        width: 25px;
-        padding: 0 2px;
+@media screen and (min-width: 525px) {
+    .bottom .texts .text_section ,
+    .texts .text_section {
+        max-width: 48%;
+    }
+    .bottom .projects{
+        width: 40%;
+        height: 100px;
+        margin: 15px;
+        padding: 0;
     }
 }
 
 @media screen and (min-width: 768px) {
-    .container .Head {
+    .Head_master{
+        padding: 2rem 1rem;
+    }
+    .top {
+        padding: 2rem 0.1rem;
         width: 100%;
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
     }
-
-    .container .Head_master h1,
-    .container .Head h1 {
-        font-size: 25px;
-        padding: 15px 5px 15px 40px;
+    .About{
+        padding: 1rem 1rem
     }
-
-    .container .SeeMore {
-        padding: 12px 18px;
-        font-size: 18px;
-        font-weight: 600;
+    .texts {
+        width: 58%;
+        gap: 20px;
     }
-
-    .container .SeeMore img {
-        width: 30px;
-        padding: 0 5px;
+    .texts .text_section {
+        max-width: 100%;
+    }
+    .bottom .texts .text_section {
+        max-width: 100%;
+    }
+    
+    .image {
+        width: 40%;
+    }
+    .texts p {
+        font-size: 16px;
+        font-weight: 400;
+    }
+    .texts h1 {
+        font-size: 16px;
+        font-weight: 700;
+    }
+    .bottom .projects{
+        width: 70%;
+        margin: 15px;
+        padding: 0.3rem 0;
     }
 }
 
 @media screen and (min-width: 1024px) {
 
-    .container .Head_master h1,
-    .container .Head h1 {
-        font-size: 35px;
-        padding: 15px 5px 15px 40px;
+    .About{
+        padding: 1rem 2rem
     }
-
-    .container .SeeMore {
-        padding: 12px 22px;
-        font-size: 18px;
-        font-weight: 600;
-    }
-
-    .container .SeeMore img {
-        width: 35px;
-        padding: 0 5px;
-    }
-
-    .container .About {
-      display: flex;
-      flex-direction: row;
-    }
-
-    .container .About h1 {
-        font-size: 55px;
-    }
-
-    /* .container .about{
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-    } */
-    .About .Texts {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        padding: 1.2rem 6%;
+    .texts {
         width: 58%;
+        gap: 10px;
     }
-
-    .container .Images {
-        width: 40%;
-        position: relative;
+    .texts .text_section {
+        max-width: 48%;
     }
-
-    .container .Artboard2 {
-        width: 200px;
-        position: absolute;
-        top: 215px;
-        right: 40px;
-    }
-
-    .Images .Artboard {
-        position: absolute;
-        bottom: 0;
-        right: 0px;
-        background: hsl(86, 37%, 93%);
-    }
-
-    /* .container .Texts{
-        width: 48%;
-    } */
-    .container .Texts p {
+    .texts p {
         font-size: 18px;
+        font-weight: 400;
     }
+    .texts h1 {
+        font-size: 20px;
+        font-weight: 700;
+    }
+    .image {
+        width: 40%;
+    }
+    .image img{
+        width: 70%;
+    }
+    
 }

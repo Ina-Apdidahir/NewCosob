@@ -6,15 +6,6 @@ import icons from './icons.jsx'
 
 import styles from './Services.module.css'
 import next from '../assets/web Images/next.png'
-import whiteArrow from '../assets/Icons/whiteArrow.png'
-
-
-import Design from '../assets/web Images/Design.png'
-import Event from '../assets/web Images/Event.png'
-import camer from '../assets/web Images/camera.png'
-import Vediograph from '../assets/web Images/videography.png'
-import ArealPhoto from '../assets/web Images/Areal Photo.png'
-import FamilyPortrait from '../assets/web Images/family portrait.png'
 
 
 function ServiceSection() {
@@ -29,12 +20,6 @@ function ServiceSection() {
     const HeadClass = isHomePage ? styles.Head : `${styles.Head} ${styles.hide}`;
     const Head_master = isHomePage ? `${styles.Head_master} ${styles.hide}` : styles.Head_master;
 
-    /////////// ..... ___________   Handle service icons  Events of ____________  .... //////////////
-
-
-
-
-    /////////// ..... ___________   Handle service icons  Events of ____________  .... //////////////
 
 
     return (

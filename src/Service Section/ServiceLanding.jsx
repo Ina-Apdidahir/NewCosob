@@ -1,17 +1,15 @@
 import HeadSection from "../Header Section/Header.jsx"
-import Work from "./Work .jsx"
-import Footer from "../Footer section/Footer.jsx"
+import ServiceSection from "./Services.jsx"
 import Bottom_Foter from "../Footer section/Bottom_Foter.jsx"
 
-function WorkLanding() {
+function ServiceLanding() {
     return (
         <>
             <HeadSection />
-            <Work />
-            <Footer />
+            <ServiceSection />
             <Bottom_Foter />
         </>
     )
 }
 
-export default WorkLanding
+export default ServiceLanding
