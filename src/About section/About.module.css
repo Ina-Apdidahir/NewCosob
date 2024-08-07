@@ -1,0 +1,278 @@
+.container {
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.Head {
+    border-bottom: 1px solid hsla(60, 3%, 6%, 0.265);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2%;
+}
+
+.Head_master h1,
+.Head h1 {
+    font-family: "Jost", sans-serif;
+    padding: 15px 5px 15px 40px;
+    font-size: 25px;
+    font-weight: 600;
+    padding: 10px 5px;
+}
+
+.Head_master h1 {
+    color: #8D8D8D;
+}
+
+.Head_master {
+    width: 98%;
+    padding: 2rem 1rem;
+    border-radius: 0.2rem;
+    position: absolute;
+    top: 3rem;
+    background: #243858;
+
+}
+
+.SeeMore {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #E33B4E;
+    color: #FFFFFF;
+    padding: 10px 12px;
+    border-radius: 2px;
+    border: none;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+button img {
+    width: 25px;
+    padding: 0 2px;
+}
+
+/* ////////// CONDITON STYLES /////////////// */
+
+.hide {
+    display: none;
+    /* Completely hide the element */
+}
+
+.hidden {
+    opacity: 0;
+    /* Completely hide the element */
+}
+
+/* ////////// CONDITON STYLES /////////////// */
+
+.About {
+    /* background-image: url('../assets/web Images/Artboard4.png');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed; */
+    background-color: #E7ECF0;
+    color: #101012;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+.AboutImg {
+    /* background-image: url('../assets/web Images/Artboard4.svg');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed; */
+    background-color: #E7ECF0;
+    color: #101012;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    width: 98%;
+}
+
+
+  
+.about_btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.About .Texts {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 25px;
+    padding: 1.2rem 3%;
+}
+
+.About .Texts a {
+    text-decoration: none;
+}
+
+span {
+    font-family: "Jost", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.shorttext {
+    color: #101012;
+}
+
+.Longtext {
+    color: #101012;
+}
+
+.subtitle {
+    font-family: "Jost", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 100px;
+}
+
+.Images {
+    width: 100%;
+    display: flex;
+   justify-content: center;
+}
+
+.Images .cosobLogo5 {
+    width: 100%;
+}
+
+.Images .Artboard {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40%;
+    height: 40%;
+    background: #E7ECF0;
+}
+
+/* .container .Texts{
+    padding: 10px;
+} */
+.container .Texts p {
+    font-family: "Jost", sans-serif;
+    font-size: 16px;
+}
+
+@media screen and (min-width: 425px) {
+    .container .SeeMore {
+        padding: 10px 14px;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .container .SeeMore img {
+        width: 25px;
+        padding: 0 2px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .container .Head {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .container .Head_master h1,
+    .container .Head h1 {
+        font-size: 25px;
+        padding: 15px 5px 15px 40px;
+    }
+
+    .container .SeeMore {
+        padding: 12px 18px;
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    .container .SeeMore img {
+        width: 30px;
+        padding: 0 5px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+    .container .Head_master h1,
+    .container .Head h1 {
+        font-size: 35px;
+        padding: 15px 5px 15px 40px;
+    }
+
+    .container .SeeMore {
+        padding: 12px 22px;
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    .container .SeeMore img {
+        width: 35px;
+        padding: 0 5px;
+    }
+
+    .container .About {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .container .About h1 {
+        font-size: 55px;
+    }
+
+    /* .container .about{
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    } */
+    .About .Texts {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: 1.2rem 6%;
+        width: 58%;
+    }
+
+    .container .Images {
+        width: 40%;
+        position: relative;
+    }
+
+    .container .Artboard2 {
+        width: 200px;
+        position: absolute;
+        top: 215px;
+        right: 40px;
+    }
+
+    .Images .Artboard {
+        position: absolute;
+        bottom: 0;
+        right: 0px;
+        background: hsl(86, 37%, 93%);
+    }
+
+    /* .container .Texts{
+        width: 48%;
+    } */
+    .container .Texts p {
+        font-size: 18px;
+    }
+}

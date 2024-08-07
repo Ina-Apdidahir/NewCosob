@@ -1,0 +1,244 @@
+.container {
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0.5rem 2rem 0.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.content_Detail {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.Images_container {
+    padding: 0.5rem 0 2rem 0;
+    width: 100%;
+    overflow: hidden;
+    /* Prevent overflowing content */
+    position: relative;
+    /* Enable positioning of navigation buttons */
+}
+.pictures {
+    width: 100%;
+    padding: 1rem 0.1rem 2rem 0.1rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+    display: flex;
+    justify-content: center;
+    /* Arrange reviews horizontallymax */
+    transition: transform 0.5s ease-in-out;
+    /* Smooth transition for sliding */
+    gap: 60px;
+}
+
+.pictures::-webkit-scrollbar {
+    display: none;
+}
+
+.pictures img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 5px;
+}
+
+.slider_button {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    padding: 7px 5px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.863);
+    backdrop-filter: blur(4px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.next {
+    right: 0.4rem;
+}
+
+.prev {
+    left: 0.5rem;
+}
+
+.slider_button img {
+    width: 30px;
+}
+
+.Images_container .hide_img_indicators,
+.Images_container .hide_dot_indicators {
+    display: none;
+}
+
+.hide_slider_button {
+    display: none;
+}
+
+
+.Head_master h1 {
+    font-family: "Jost", sans-serif;
+    padding: 15px 5px 15px 40px;
+    font-size: 25px;
+    font-weight: 600;
+    padding: 10px 5px;
+}
+
+.Head_master h1 {
+    color: #8D8D8D;
+}
+
+.Head_master {
+    width: 98%;
+    padding: 2rem 1rem;
+    border-radius: 0.2rem;
+    background: #243858;
+
+}
+
+.conetnts {
+    width: 100%;
+    padding: 1rem 0.5rem;
+}
+
+.conetnts p {
+    font-family: "Jost", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+
+.img_indicators {
+    position: absolute;
+    bottom: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img_indicators .img_indicator {
+    cursor: pointer;
+    max-width: 15%;
+    max-height: 40px;
+    margin: 0 0.2rem;
+    filter: brightness(70%);
+    border-radius: 2px;
+}
+
+.img_indicators .indicatror_inactive {
+    max-width: 15%;
+    max-height: 40px;
+    margin: 0 0.2rem;
+    border-radius: 2px;
+}
+
+
+
+
+.dot_indicatrors {
+    position: absolute;
+    bottom: 1rem;
+    left: 35%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dot_indicatror {
+    cursor: pointer;
+    width: 2.6rem;
+    height: 0.6rem;
+    padding: 4px;
+    border-radius: 30px;
+    background-color: #0b0c0c;
+    box-shadow: 0 0 2px #243858;
+    margin: 0 0.2rem;
+}
+
+.dot_indicatrors .indicatror_inactive {
+    cursor: pointer;
+    width: 0.8rem;
+    height: 0.6rem;
+    padding: 3px;
+    border-radius: 30px;
+    background-color: #8D8D8D;
+    box-shadow: 0 0 1px #243858;
+    margin: 0 0.2rem;
+}
+
+.dot_indicatrors .dot_indicatror,
+.dot_indicatrors .indicatror_inactive {
+    transition: width .4s;
+}
+
+@media screen and (min-width: 525px) {
+    .Images_container {
+        padding: 0 0 2rem 0;
+    }
+
+    .pictures {
+        padding: 2rem 0;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .conetnts p {
+        font-family: "Jost", sans-serif;
+        font-size: 18px;
+        font-weight: 400;
+    }
+
+    .Images_container {
+        padding: 0 0 4rem 0;
+    }
+
+    .img_indicators .img_indicator {
+        max-width: 20%;
+        max-height: 50px;
+    }
+
+    .img_indicators .indicatror_inactive {
+        max-width: 20%;
+        max-height: 50px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+    .details {
+        display: flex;
+        width: 48%;
+    }
+
+    .content_Detail {
+        padding: 1rem 0;
+        gap: 20px;
+        flex-direction: row;
+    }
+
+    .Images_container {
+        width: 48%;
+        padding: 0 0 3rem 0;
+    }
+
+    .Images_container .pictures {
+        padding: 0.5rem 0;
+        width: 100%;
+        height: 280px;
+    }
+
+    .conetnts p {
+        font-family: "Jost", sans-serif;
+        font-size: 20px;
+        font-weight: 400;
+    }
+}

@@ -14,7 +14,9 @@
     top: 0;
     height: 60px;
     min-width: 100%;
-    background: #FFFFFF;
+    /* background: #FFFFFF; */
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(1rem);
     border-bottom: 0.5px solid hsla(230, 12%, 40%, 0.231);
     z-index: 100;
     display: flex;
@@ -46,7 +48,7 @@ header a {
 }
 
 .logo_side p {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Jost", sans-serif;
     font-size: 12px;
     font-weight: 400;
 }
@@ -72,13 +74,16 @@ header a {
 .nav_menue ul li a {
     text-decoration: none;
     color: #101112;
-    font-family: "Anta", sans-serif;
+    font-family: "Jost", sans-serif;
     font-size: 14px;
 }
 
+
+
 .nav_menue ul li:hover a {
-    color: #535b5a;
+    color: #8D8D8D;
 }
+
 
 .icons {
     display: flex;
@@ -92,8 +97,8 @@ header a {
     display: inline-block;
     background-color: hsl(353, 75%, 56%);
     padding: 8px 12px;
+    font-family: "Jost", sans-serif;
     font-size: 12px;
-    color: #fff;
     font-weight: 400;
     border-radius: .2rem;
     border: none;
@@ -104,7 +109,10 @@ header a {
 .orederbutton:hover {
     box-shadow: 0 4px 24px hsla(359, 75%, 40%, 0.4);
 }
-
+.orederbutton a{
+    color: #FFFFFF;
+    text-decoration: none;
+}
 .icons .user_actions {
     gap: 0.5rem;
     display: flex;
@@ -133,7 +141,8 @@ header a {
 .Nav_side {
     width: 100%;
     padding: 15px 10x;
-    background: hsl(230, 100%, 98%);
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(0.25rem);
     box-shadow: 0 8px 16px hsla(230, 75%, 32%, .15);
     position: fixed;
     top: -100%;
@@ -173,7 +182,7 @@ header a {
 .Nav_side_menue ul li a {
     text-decoration: none;
     color: #101112;
-    font-family: "Anta", sans-serif;
+    font-family: "Jost", sans-serif;
     font-size: 18px;
     font-weight: 600;
 }
@@ -195,7 +204,7 @@ header a {
 #Nav_side .close {
     position: absolute;
     top: 1.15rem;
-    right: 1.5rem;
+    right: 1rem;
 }
 
 #Nav_side #close {
@@ -223,11 +232,11 @@ header a {
 
 .new_header {
     position: fixed;
-    top: 0;
+    top: 0.2rem;
     height: 60px;
-    min-width: 100%;
-    padding: 5px 10px;
-    background: #FFFFFF;
+    min-width: 98%;
+    padding: 0.5rem 1rem;
+    background-color: rgba(255, 255, 255, 0.75);
     border-bottom: 0.5px solid hsla(230, 12%, 40%, 0.231);
     z-index: 100;
     display: flex;
@@ -238,19 +247,12 @@ header a {
 
 
 
-/* For large devices */
-@media screen and (min-width: 425px) {
-
-    /* .container .logo_side{
-        left: 130px;
-    } */
-    /* .orederbutton {
-        right: 300px;
-    } */
-}
 
 @media screen and (min-width: 768px) {
 
+    .container .new_header{
+        height: 80px;
+    }
     .container .head_cont {
         height: 80px;
         min-width: 98%;
@@ -261,15 +263,31 @@ header a {
     .container .new_header .logo_side img {
         width: 130px;
     }
+
     .container .new_header .logo_side p {
         font-size: 16px;
     }
-
+    .Nav_side_menue ul li {
+        padding: 0.7rem;
+        cursor: pointer;
+    }
+    .Nav_side_menue ul li a {
+        text-decoration: none;
+        color: #101112;
+        font-family: "Jost", sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+    }
+    
     .container .new_header #menue {
         width: 35px;
         cursor: pointer;
     }
-
+    #Nav_side #close {
+        width: 25px;
+        cursor: pointer;
+    }
+    
     .container .user_actions .orederbutton {
         padding: 10px 12px;
         font-size: 16px;
@@ -294,7 +312,7 @@ header a {
     }
 
     .container header {
-        padding: 5px;
+        padding: 10px 2rem;
     }
 
     .container .logo_side img {
