@@ -5,12 +5,8 @@ import ServiceLanding from './Service Section/ServiceLanding.jsx';
 import WorkLanding from './Work  Section/WorkLanding.jsx'
 import Foter_Landing from './Footer section/Footer_Langing.jsx'
 import Details from './Service Section/Details.jsx'
+import Testmonials from './Testimonials Section/Testimonials.jsx';
 import './App.css'
-
-
-
-// import Customers from './customer Section/Customer.jsx'
-
 
 
 import React from 'react';
@@ -31,6 +27,7 @@ function App() {
           <Route path="/details/:name" element={<Details />} /> 
           <Route path="/work" element={<WorkLanding />} />
           <Route path="/contact" element={<Foter_Landing />} /> 
+          <Route path="/testmonials" element={<Testmonials />} /> 
         </Routes>
       </BrowserRouter>
     </>
@@ -52,7 +49,7 @@ export default App
   //  
   //   
   //   
-  //   <Route path="/customers" element={<Customers />} /> 
+  //   
 
   //   
   //   
