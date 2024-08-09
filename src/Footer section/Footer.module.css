@@ -9,6 +9,21 @@
     overflow: hidden;
 }
 
+
+/* \\\\\\\\\\ scroll \\\\\\\\\\\ */
+.LeftSlide{
+    opacity: 0;
+    transition: all 1.2s ease-out;
+    position: relative;
+    left: -6rem;
+}
+.LeftSlide.visible{
+    opacity: 1;
+    left: 0;
+}
+
+/* \\\\\\\\\\ scroll \\\\\\\\\\\ */
+
 .Footer_container {
     width: 100%;
     display: flex;

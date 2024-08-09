@@ -6,7 +6,40 @@
     align-items: center;
     padding: 0 0.1rem;
     overflow: hidden;
+    margin-bottom: 30px;
 }
+
+.Scale{
+    transform: scale(0.7);
+    opacity: 0;
+    transition: all 1.2s ease-out;
+}
+.Scale.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.LeftSlide{
+    opacity: 0;
+    transition: all 1.2s ease-out;
+    position: relative;
+    left: -6rem;
+}
+.LeftSlide.visible{
+    opacity: 1;
+    left: 0;
+}
+.rightSlide {
+    opacity: 0;
+    transition: all 1.2s ease-out;
+    position: relative;
+    right: -2rem;
+}
+.rightSlide.visible {
+    opacity: 1;
+    right: 0;
+}
+
 
 
 .head_cont {

@@ -4,31 +4,54 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0 0.5rem;
+    gap: 20px;
+    padding: 2rem 0.1rem 2rem 0.1rem;
     overflow: hidden;
+    height: 100vh;
 }
 
-.main {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.SlideElement:nth-child(1){
+    opacity: 0;
+    transition: all 1.2s ease-out;
+    transform: translateX(-100vw);
 }
-.main a{
+.SlideElement:nth-child(2){
+    opacity: 0;
+    transition: all 1.2s ease-out;
+    transform: translateX(100vw);
+}
+.SlideElement.visible{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+.Homebtn{
+    opacity: 0;
+    transition: all 1.2s ease-out;
+}
+.scale {
+    transform: scale(0.7);
+}
+
+.scale.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+.inspire a{
     text-decoration: none;
 }
 
 
 .inspire {
-    position: absolute;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 2rem;
     color: #102110;
 }
 
@@ -45,19 +68,19 @@
     font-weight: 500;
 }
 
-.intouch {
+.Homebtn {
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 0.5rem;
     background: #E33B4E;
     color: #FFFFFF;
-    padding: 10px 18px;
-    gap: 4px;
+    padding: 0.5rem 1.5rem;
     border-radius: 2px;
     border: none;
     font-family: "Jost", sans-serif;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 500;
 }
 
@@ -65,7 +88,7 @@
     box-shadow: 0 4px 24px hsla(359, 75%, 40%, 0.4);
 }
 
-.intouch img {
+.Homebtn img {
     width: 20px;
 }
 
@@ -84,7 +107,7 @@
         font-weight: 700;
     }
 
-    .container .intouch {
+    .container .Homebtn {
         padding: 12px 18px;
         font-size: 16px;
         font-weight: 600;
@@ -94,7 +117,7 @@
         box-shadow: 0 3px 20px hsla(359, 75%, 40%, 0.4);
     }
 
-    .container .intouch img {
+    .container .Homebtn img {
         width: 20px;
     }
 }
@@ -110,7 +133,7 @@
         font-size: 20px;
     }
 
-    .container .intouch {
+    .container .Homebtn {
         padding: 12px 22px;
         font-size: 18px;
         font-weight: 600;
@@ -120,8 +143,8 @@
         box-shadow: 0 4px 24px hsla(359, 75%, 40%, 0.4);
     }
 
-    .container .intouch img {
+    .container .Homebtn img {
         width: 35px;
     }
-
+    
 }

@@ -24,7 +24,7 @@ function Footer() {
         setIsabout(location.pathname === '/contact');
     }, [location]);
 
-    const Head_master = isabout ?  styles.Head_master : `${styles.Head_master} ${styles.hide}`;
+    const Head_master = isabout ? styles.Head_master : `${styles.Head_master} ${styles.hide}`;
 
     const shorttitle = isHomePage ? styles.title : `${styles.title} ${styles.hide}`;
     const LongTXT = isHomePage ? `${styles.ContactTXT} ${styles.hide}` : styles.ContactTXT;
@@ -50,9 +50,9 @@ function Footer() {
 
             succmessagetRef.current.style.opacity = 0
         }, 2000);
-    
+
         return () => clearInterval(intervalId);
-      }, []);
+    }, []);
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -75,9 +75,45 @@ function Footer() {
             );
     };
 
-
-
     // /////////////>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+    //////////////////    ____________  Scroll Animations _____________////////////
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add(styles.visible);
+                    } else {
+                        entry.target.classList.remove(styles.visible);
+                    }
+                });
+            },
+            { threshold: 0.1 } // Adjust the threshold as needed
+        );
+
+        const elements = document.querySelectorAll(`.${styles.Scale}`);
+        elements.forEach((el) => observer.observe(el));
+
+
+
+        const LeftSlide = document.querySelectorAll(`.${styles.LeftSlide}`);
+        LeftSlide.forEach((el) => observer.observe(el));
+
+        const rightSlide = document.querySelectorAll(`.${styles.rightSlide}`);
+        rightSlide.forEach((el) => observer.observe(el));
+        return () => {
+            if (observer) {
+                observer.disconnect();
+            }
+        };
+    }, []);
+
+
+    //////////////////    ____________  Scroll Animations _____________////////////
+
+
 
     return (
         <div className={styles.container}>
@@ -89,28 +125,28 @@ function Footer() {
 
                     <div className={styles.address_box}>
                         <div className={LongTXT}>
-                            <h1>Let's chat about bringing your vision to life.</h1>
-                            <p>
+                            <h1 className={styles.LeftSlide}>Let's chat about bringing your vision to life.</h1>
+                            <p className={styles.LeftSlide}>
                                 We're passionate about helping businesses like yours create a lasting impression.
                                 Whether you need stunning visuals, engaging social media content,
                                 or a brand identity that truly resonates with your audience, we're here to
                                 collaborate andcraft a solution that exceeds your expectations.
                             </p>
-                            <h1>
+                            <h1 className={styles.LeftSlide}>
                                 Ready to get started?
                             </h1>
-                            <p>
+                            <p className={styles.LeftSlide}>
                                 Fill out the form below and tell us a bit about your project.
                                 We'll be in touch shortly to discuss your needs and how we can help
                                 you achieve your goals.
                             </p>
                         </div>
-                        <h2 className={shorttitle}>
+                        <h2 className={` ${shorttitle} ${styles.LeftSlide}`}>
                             Need help with professional photography? Let's work together!
                         </h2>
-                        <ul>
+                        <ul className={styles.LeftSlide}>
                             <li>
-                               <img src={phone} alt="" />
+                                <img src={phone} alt="" />
                                 <span>+252 123-090-4040</span>
                             </li>
                             <li>
@@ -138,20 +174,20 @@ function Footer() {
                                 <form ref={form} method="post" id="contact-form" onSubmit={handleSubmit}>
                                     <div className={styles.one_line}>
                                         <div className={styles.box_input}>
-                                            <input ref={nameInputRef} type="text" name="user_name" id="" className={styles.text} placeholder="Full Name.." required/>
+                                            <input ref={nameInputRef} type="text" name="user_name" id="" className={styles.text} placeholder="Full Name.." required />
                                         </div>
                                         <div className={styles.box_input}>
-                                            <input ref={phoneInputRef} type="tel" name="user_phone" id="" className={styles.text} placeholder="your phone.." required/>
+                                            <input ref={phoneInputRef} type="tel" name="user_phone" id="" className={styles.text} placeholder="your phone.." required />
                                         </div>
                                     </div>
 
                                     <div className={styles.box_input}>
-                                        <input ref={emailInputRef} type="email" name="user_email" id="" className={styles.text} placeholder="your email.."  required/>
+                                        <input ref={emailInputRef} type="email" name="user_email" id="" className={styles.text} placeholder="your email.." required />
                                     </div>
 
-                                     <div className={styles.message_input}>
+                                    <div className={styles.message_input}>
                                         <label ></label>
-                                        <textarea ref={messageInputRef} name="user_message" id="" className={styles.Text_Area}  rows="10" placeholder="your Message.." required></textarea>
+                                        <textarea ref={messageInputRef} name="user_message" id="" className={styles.Text_Area} rows="10" placeholder="your Message.." required></textarea>
                                     </div>
                                     <button type="submit" className={styles.btn_send}>Contact us</button>
                                 </form>

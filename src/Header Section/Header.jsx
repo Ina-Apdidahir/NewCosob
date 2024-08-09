@@ -39,20 +39,52 @@ function HeadSection() {
         window.scrollTo(0, 0); // Scroll to top on route change
     }, [location]);
 
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add(style.visible);
+                    } else {
+                        entry.target.classList.remove(style.visible);
+                    }
+                });
+            },
+            { threshold: 0.1 } // Adjust the threshold as needed
+        );
+
+        const elements = document.querySelectorAll(`.${style.Scale}`);
+        elements.forEach((el) => observer.observe(el));
+
+  
+
+        const LeftSlide = document.querySelectorAll(`.${style.LeftSlide}`);
+        LeftSlide.forEach((el) => observer.observe(el));
+
+        const rightSlide = document.querySelectorAll(`.${style.rightSlide}`);
+        rightSlide.forEach((el) => observer.observe(el));
+        return () => {
+            if (observer) {
+                observer.disconnect();
+            }
+        };
+    }, []);
+
     // ///////////////////////////   SCROLL FUNCTION    // ////////////////// 
 
     return (
         <div className={style.container}>
             <div className={style.new_header}>
-                <div className={style.user_actions}>
+                <div className={`${style.user_actions} ${style.LeftSlide}`}>
                     <button className={style.orederbutton}><Link to="/contact">Order Now</Link></button>
                 </div>
-                <div className={style.logo_side} >
+                <div className={`${style.logo_side} ${style.Scale}`} >
                     <img src={Logo} alt=""></img>
                     <p>Media Works</p>
                 </div>
                 <div className={style.user_actions}>
-                    <div className={style.menueBtn}>
+                    <div className={` ${style.menueBtn} ${style.rightSlide}`}>
                         <img onClick={handleMenuClick} src={Menue} alt="" id={style.menue}></img>
                     </div>
                 </div>
@@ -65,11 +97,11 @@ function HeadSection() {
                     <div className={style.Nav_classes}>
                         <div className={style.Nav_side_menue}>
                             <ul>
-                                <li><Link to="/">Home</Link></li>
-                                <li><Link to="/about">About</Link></li>
-                                <li><Link to="/service">Services</Link></li>
-                                <li><Link to="/work">Work</Link></li>
-                                <li><Link to="/contact">Contact</Link></li>
+                                <li><Link to="/" className={`${style.navi} ${style.Scale}`}>Home</Link></li>
+                                <li><Link to="/about" className={`${style.navi} ${style.Scale}`}>About</Link></li>
+                                <li><Link to="/service" className={`${style.navi} ${style.Scale}`}>Services</Link></li>
+                                <li><Link to="/work" className={`${style.navi} ${style.Scale}`}>Work</Link></li>
+                                <li><Link to="/contact" className={`${style.navi} ${style.Scale}`}>Contact</Link></li>
                             </ul>
                         </div>
                     </div>
@@ -77,21 +109,21 @@ function HeadSection() {
             </div>
             <div className={`${style.head_cont} ${isSmallScreen ? style.hide_head_cont : ''}`}>
                 <header>
-                    <div className={style.logo_side} >
+                    <div className={`${style.logo_side} ${style.LeftSlide}`} >
                         <img src={Logo} alt=""></img>
                         <p>Media Works</p>
                     </div>
                     <div className={style.nav_menue}>
                         <ul>
-                            <li><Link to="/">Home</Link></li>
-                            <li><Link to="/about">About</Link></li>
-                            <li><Link to="/work">Work</Link></li>
-                            <li><Link to="/service">Services</Link></li>
-                            <li><Link to="/contact">Contact</Link></li>
+                            <li><Link to="/" className={`${style.navi} ${style.Scale}`}>Home</Link></li>
+                            <li><Link to="/about" className={`${style.navi} ${style.Scale}`}>About</Link></li>
+                            <li><Link to="/work" className={`${style.navi} ${style.Scale}`}>Work</Link></li>
+                            <li><Link to="/service" className={`${style.navi} ${style.Scale}`}>Services</Link></li>
+                            <li><Link to="/contact" className={`${style.navi} ${style.Scale}`}>Contact</Link></li>
                         </ul>
                     </div>
                     <div className={style.icons}>
-                        <div className={style.user_actions}>
+                        <div className={` ${style.user_actions} ${style.rightSlide}` }>
                             <button className={style.orederbutton}><Link to="/contact">Order Now</Link></button>
                         </div>
                     </div>
