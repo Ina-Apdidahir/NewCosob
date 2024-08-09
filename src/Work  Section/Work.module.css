@@ -4,7 +4,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 2rem 0.1rem;
+    gap: 20px;
+    padding: 2rem 0.1rem ;
     overflow: hidden;
 }
 .Work_section{
@@ -16,7 +17,7 @@
     justify-content: space-between;
     align-items: center;
     margin-top: 40px;
-    padding: .2rem;
+    padding: 0.2rem;
 }
 .WorkHead{
     border-bottom: 1px solid hsla(60, 3%, 6%, 0.265);

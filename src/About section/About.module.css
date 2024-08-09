@@ -4,6 +4,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 20px;
     padding: 2rem 0.1rem;
     position: relative;
     overflow: hidden;
@@ -89,8 +90,7 @@
 
 .Head_master {
     width: 98%;
-    margin-top: 30px;
-    padding: 1rem 1rem;
+    padding: 1rem;
     border-radius: 0.2rem;
     background: #243858;
 }
