@@ -92,15 +92,16 @@ function Work() {
 
     const filteredPosts = selectedCategory === 'All'
         ? works
-        : works.filter(work => 
+        : works.filter(work =>
             Array.isArray(work.jobType) && work.jobType.includes(selectedCategory)
         );
 
     // console.log('Filtered Posts:', filteredPosts);
-    
+
 
     return (
-        <div className={styles.container} >
+
+        <div className={styles.Container}>
             <div className={styles.Work_section}>
                 <div className={styles.WorkHead}>
                     <h1>Our Working Process</h1>
@@ -150,6 +151,7 @@ function Work() {
                 </div>
             </div>
         </div>
+
     )
 
 }
