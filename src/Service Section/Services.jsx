@@ -1,9 +1,9 @@
 
 import { Link, useLocation } from 'react-router-dom'
 import React, { useState, useEffect } from 'react'
-import icons from './icons.jsx'
 
 
+import client from '../../Sanity Client/SanityClient';
 import styles from './Services.module.css'
 import next from '../assets/web Images/next.png'
 
@@ -20,6 +20,45 @@ function ServiceSection() {
 
     const HeadClass = isHomePage ? styles.Head : `${styles.Head} ${styles.hide}`;
     const Head_master = isHomePage ? `${styles.Head_master} ${styles.hide}` : styles.Head_master;
+
+   const [services, setServices] = useState([])
+   const [isLoading, setIsLoading] = useState(true);
+   const [error, setError] = useState(null);
+
+    useEffect(() => {
+        const query = `*[ _type == "service" ] | order(_createdAt desc) {
+            title,
+            slug,
+            description,
+            coverImage {
+              asset -> {
+                _id,
+                url
+              },
+              alt
+            },
+            serviceImages {
+              asset -> {
+                _id,
+                url
+              },
+              alt
+            },
+            servicebody
+        }`;
+
+        client.fetch(query)
+            .then((data) => {
+                setServices(data);
+                setIsLoading(false);
+            })
+            .catch((err) => {
+                console.error('Error fetching data:', err);
+                setError(err);
+                setIsLoading(false);
+            });
+    }, []);
+
 
     /////////// ..... ___________   Handle scroll  Events of ____________  .... //////////////
 
@@ -74,14 +113,17 @@ function ServiceSection() {
                 </div>
                 <div className={styles.serviceList}>
 
-                    {icons.map((icon) => (
-                        <Link key={icon.name} to={`/details/${icon.name}`}> {/* Use Link with path */}
+                    {services.map((service, index) => (
+                        <Link key={index} to={`/details/${service.slug?.current}`}> 
                             <div className={styles.Service}>
                                 <div className={styles.Image}>
-                                    <img className={`${styles.img} ${styles.Scale}`} src={icon.image} alt={icon.name} />
+                                    {service.coverImage && service.coverImage.asset &&(
+                                        <img className={`${styles.img} ${styles.Scale}`} src={service.coverImage.asset.url} alt={service.title} />
+                                    )}
+                                    
                                 </div>
                                 <div className={`${styles.texts} ${styles.Scale}`}>
-                                    <p>{icon.name}</p>
+                                    <p>{service.title}</p>
                                     <div className={styles.Arrow}>
                                         <img src={next} alt="" />
                                     </div>

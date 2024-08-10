@@ -1,11 +1,21 @@
 
 import React, { useEffect, useState } from 'react';
+import { useLocation, Link } from 'react-router-dom';
 
 import styles from './Work.module.css'
 
 import client from '../../Sanity Client/SanityClient';
 
 function Work() {
+
+    const location = useLocation();
+    const [isHomePage, setIsHomePage] = useState(location.pathname === '/'); // Initial state
+
+    useEffect(() => {
+        setIsHomePage(location.pathname === '/');
+    }, [location]);
+
+
 
 
     /////////// ..... ___________   Handle scroll  Events of ____________  .... //////////////
@@ -37,14 +47,14 @@ function Work() {
 
     /////////// ..... ___________   Handle scroll   Events of ____________  .... //////////////
 
-    const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 1024);
+    // const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 1024);
 
-    useEffect(() => {
-        const handleResize = () => setIsSmallScreen(window.innerWidth < 1024);
-        window.addEventListener('resize', handleResize);
+    // useEffect(() => {
+    //     const handleResize = () => setIsSmallScreen(window.innerWidth < 1024);
+    //     window.addEventListener('resize', handleResize);
 
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
+    //     return () => window.removeEventListener('resize', handleResize);
+    // }, []);
 
 
 
@@ -90,6 +100,7 @@ function Work() {
         setSelectedCategory(value);
     };
 
+
     const filteredPosts = selectedCategory === 'All'
         ? works
         : works.filter(work =>
@@ -98,6 +109,8 @@ function Work() {
 
     // console.log('Filtered Posts:', filteredPosts);
 
+    const First6 = filteredPosts.slice(0, 6)
+    const Allworks = filteredPosts
 
     return (
         <div className={styles.container}>
@@ -128,27 +141,50 @@ function Work() {
                             </div>
                         </div>
                     </div>
-                    <div className={styles.works} >
-                        {filteredPosts && filteredPosts.length > 0 && (
-                            filteredPosts.map((work, index) => (
-                                <div className={styles.work} key={index}>
-                                    {work.jobImage && work.jobImage.asset && (
-                                        <div className={styles.work_img}>
-                                            <img className={styles.Scale} src={work.jobImage.asset.url} alt="" />
+
+                    {isHomePage ? (
+                        <div className={styles.works} >
+                            {First6 && First6.length > 0 && (
+                                First6.map((work, index) => (
+                                    <div className={styles.work} key={index}>
+                                        {work.jobImage && work.jobImage.asset && (
+                                            <div className={styles.work_img}>
+                                                <img className={styles.Scale} src={work.jobImage.asset.url} alt="" />
+                                            </div>
+                                        )}
+                                        <div className={`${styles.work_Txts} ${styles.Scale}`}>
+                                            {work.client && (
+                                                <h2>{work.client}</h2>
+                                            )}
+                                            {work.jobType && (
+                                                <p>{work.job}</p>
+                                            )}
                                         </div>
-                                    )}
-                                    <div className={`${styles.work_Txts} ${styles.Scale}`}>
-                                        {work.client && (
-                                            <h2>{work.client}</h2>
-                                        )}
-                                        {work.jobType && (
-                                            <p>{work.job}</p>
-                                        )}
                                     </div>
-                                </div>
-                            ))
-                        )}
-                    </div>
+                                ))
+                            )}
+                        </div>) : (<div className={styles.works} >
+                            {Allworks && Allworks.length > 0 && (
+                                Allworks.map((work, index) => (
+                                    <div className={styles.work} key={index}>
+                                        {work.jobImage && work.jobImage.asset && (
+                                            <div className={styles.work_img}>
+                                                <img className={styles.Scale} src={work.jobImage.asset.url} alt="" />
+                                            </div>
+                                        )}
+                                        <div className={`${styles.work_Txts} ${styles.Scale}`}>
+                                            {work.client && (
+                                                <h2>{work.client}</h2>
+                                            )}
+                                            {work.jobType && (
+                                                <p>{work.job}</p>
+                                            )}
+                                        </div>
+                                    </div>
+                                ))
+                            )}
+                        </div>)
+                    }
                 </div>
             </div>
         </div>

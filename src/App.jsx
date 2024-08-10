@@ -24,7 +24,7 @@ function App() {
           <Route path="/" element={<LandingPage />} />
           <Route path="/about" element={<AboutLanding />} />
           <Route path="/service" element={<ServiceLanding />} />
-          <Route path="/details/:name" element={<Details />} /> 
+          <Route path="/details/:slug" element={<Details />} /> 
           <Route path="/work" element={<WorkLanding />} />
           <Route path="/contact" element={<Foter_Landing />} /> 
           <Route path="/testmonials" element={<Testmonials />} /> 

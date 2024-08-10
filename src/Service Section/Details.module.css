@@ -54,7 +54,7 @@
     top: 40%;
     padding: 7px 5px;
     border: none;
-    background-color: rgba(255, 255, 255, 0.863);
+    background-color: rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(4px);
     border-radius: 50%;
     display: flex;
@@ -107,6 +107,9 @@
 .conetnts {
     width: 100%;
     padding: 1rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .conetnts p {
@@ -117,12 +120,13 @@
 
 
 .img_indicators {
-    position: absolute;
-    bottom: 1rem;
     width: 100%;
+    border-radius: 0.1rem; 
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 0.1rem;
 }
 
 .img_indicators .img_indicator {
@@ -134,51 +138,59 @@
     border-radius: 2px;
 }
 
-.img_indicators .indicatror_inactive {
+.img_indicators .indicator_inactive  {
     max-width: 15%;
     max-height: 40px;
     margin: 0 0.2rem;
     border-radius: 2px;
+    opacity: 0.5; 
 }
 
 
 
 
-.dot_indicatrors {
-    position: absolute;
-    bottom: 1rem;
-    left: 35%;
+.dot_indicators {
+    width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    gap: 0.1rem;
 }
 
-.dot_indicatror {
+.dot_indicator {
     cursor: pointer;
     width: 2.6rem;
     height: 0.6rem;
     padding: 4px;
     border-radius: 30px;
-    background-color: #0b0c0c;
-    box-shadow: 0 0 2px #243858;
-    margin: 0 0.2rem;
+    background-color: #E33B4E;
 }
 
-.dot_indicatrors .indicatror_inactive {
-    cursor: pointer;
-    width: 0.8rem;
+.dot_indicators .indicator_inactive{
+    width: 1.6rem;
     height: 0.6rem;
-    padding: 3px;
+    padding: 4px;
     border-radius: 30px;
-    background-color: #8D8D8D;
-    box-shadow: 0 0 1px #243858;
-    margin: 0 0.2rem;
+    background-color: #e33b4e80;
 }
 
-.dot_indicatrors .dot_indicatror,
-.dot_indicatrors .indicatror_inactive {
+
+.dot_indicators .dot_indicator,
+.dot_indicators .indicator_inactive {
     transition: width .4s;
-}
+} 
+
+
+  .hide_img_indicators {
+    display: none;
+  }
+  
+  .hide_dot_indicators {
+    display: none;
+  }
+
+
+
 
 @media screen and (min-width: 525px) {
     .Images_container {
@@ -210,11 +222,90 @@
         max-width: 20%;
         max-height: 50px;
     }
+
+        /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
+        .story .Title {
+            width: 50%;
+        }
+    
+        .Title .detail {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0 0 10px 0;
+        }
+    
+        .detail .category {
+            font-size: 14px;
+        }
+    
+        .detail .author {
+            font-size: 16px;
+            font-weight: 500;
+        }
+    
+        .story .Title h2 {
+            font-size: 20px;
+            color: #FFFFFF;
+        }
+    
+        /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+    
+      /* ////////////////  body content styles ///////////////////////// */
+    
+    .Blog_body h1{
+        font-size: 34px;
+        font-weight: 800;
+    }
+    .Blog_body h2{
+        font-size: 30px;
+        font-weight: 700;
+    }
+    .Blog_body h3{
+        font-size: 28px;
+        font-weight: 600;
+    }
+    .Blog_body h4{
+        font-size: 24px;
+        font-weight: 500;
+    }
+    
+    .Blog_body p{
+        font-size: 20px;
+    }
+    .Blog_body a{
+        cursor: pointer;
+        font-size: 16px;
+        color: #A382C6;
+        text-decoration: underline;
+    }
+    .Blog_body h1 em {
+        font-size: 18px;
+    }
+    .Blog_body p em {
+        font-size: 16px;
+    }
+    .Blog_body blockquote{
+        font-family: "Alegreya Sans SC", sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+    }
+    .Blog_body Strong{
+        font-size: 20px;
+        font-weight: 700;
+    }
+    .Blog_body ul{
+        list-style: square;
+        padding: 0.2rem ;
+    }
+
+
 }
 
 @media screen and (min-width: 1024px) {
 
-    .details {
+    .Blog_body {
         display: flex;
         width: 48%;
     }
