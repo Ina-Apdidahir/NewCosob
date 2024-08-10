@@ -9,6 +9,19 @@
     overflow: hidden;
 }
 
+.container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 2rem .1rem;
+    overflow: hidden;
+}
+
+
+
 .Scale{
     transform: scale(0.7);
     opacity: 0;

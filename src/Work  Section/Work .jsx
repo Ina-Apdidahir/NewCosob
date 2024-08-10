@@ -102,52 +102,54 @@ function Work() {
     return (
 
         <div className={styles.Container}>
-            <div className={styles.Work_section}>
-                <div className={styles.WorkHead}>
-                    <h1>Our Working Process</h1>
-                </div>
-                <div className={styles.Buttons}>
-                    <div className={styles.options}>
-                        <select className={styles.selection} value={selectedCategory} onChange={handleOptionChange}>
-                            <option value="All">All</option>
-                            <option value="Branding">Branding</option>
-                            <option value="Photography">Photography</option>
-                            <option value="Videography"> Videography </option>
-                            <option value="Events">Events</option>
-                            <option value="Media Management">Media Management</option>
-                        </select>
+            <div className={styles.container}>
+                <div className={styles.Work_section}>
+                    <div className={styles.WorkHead}>
+                        <h1>Our Working Process</h1>
                     </div>
-                    <div className={styles.workNavigations}>
-                        <div className={styles.buttons}>
-                            <button onClick={() => handleCategoryClick('All')}>All</button>
-                            <button onClick={() => handleCategoryClick('Branding')}>Branding</button>
-                            <button onClick={() => handleCategoryClick('Photography')}>Photography</button>
-                            <button onClick={() => handleCategoryClick('Videography')}>Videography</button>
-                            <button onClick={() => handleCategoryClick('Media Management')}>Media Management</button>
-                            <button onClick={() => handleCategoryClick('Events')}>Events</button>
+                    <div className={styles.Buttons}>
+                        <div className={styles.options}>
+                            <select className={styles.selection} value={selectedCategory} onChange={handleOptionChange}>
+                                <option value="All">All</option>
+                                <option value="Branding">Branding</option>
+                                <option value="Photography">Photography</option>
+                                <option value="Videography"> Videography </option>
+                                <option value="Events">Events</option>
+                                <option value="Media Management">Media Management</option>
+                            </select>
+                        </div>
+                        <div className={styles.workNavigations}>
+                            <div className={styles.buttons}>
+                                <button onClick={() => handleCategoryClick('All')}>All</button>
+                                <button onClick={() => handleCategoryClick('Branding')}>Branding</button>
+                                <button onClick={() => handleCategoryClick('Photography')}>Photography</button>
+                                <button onClick={() => handleCategoryClick('Videography')}>Videography</button>
+                                <button onClick={() => handleCategoryClick('Media Management')}>Media Management</button>
+                                <button onClick={() => handleCategoryClick('Events')}>Events</button>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div className={styles.works} >
-                    {filteredPosts && filteredPosts.length > 0 && (
-                        filteredPosts.map((work, index) => (
-                            <div className={styles.work} key={index}>
-                                {work.jobImage && work.jobImage.asset && (
-                                    <div className={styles.work_img}>
-                                        <img className={styles.Scale} src={work.jobImage.asset.url} alt="" />
+                    <div className={styles.works} >
+                        {filteredPosts && filteredPosts.length > 0 && (
+                            filteredPosts.map((work, index) => (
+                                <div className={styles.work} key={index}>
+                                    {work.jobImage && work.jobImage.asset && (
+                                        <div className={styles.work_img}>
+                                            <img className={styles.Scale} src={work.jobImage.asset.url} alt="" />
+                                        </div>
+                                    )}
+                                    <div className={`${styles.work_Txts} ${styles.Scale}`}>
+                                        {work.client && (
+                                            <h2>{work.client}</h2>
+                                        )}
+                                        {work.jobType && (
+                                            <p>{work.job}</p>
+                                        )}
                                     </div>
-                                )}
-                                <div className={`${styles.work_Txts} ${styles.Scale}`}>
-                                    {work.client && (
-                                        <h2>{work.client}</h2>
-                                    )}
-                                    {work.jobType && (
-                                        <p>{work.job}</p>
-                                    )}
                                 </div>
-                            </div>
-                        ))
-                    )}
+                            ))
+                        )}
+                    </div>
                 </div>
             </div>
         </div>
