@@ -8,6 +8,19 @@
     padding: 2rem 0.1rem ;
     overflow: hidden;
 }
+
+.Scale{
+    transform: scale(0.7);
+    opacity: 0;
+    transition: all 1.2s ease-out;
+}
+.Scale.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+
 .Work_section{
     width: 95%;
     background: #F8F8F9;
@@ -74,16 +87,16 @@
 /* /////////////// Hiden side ///////////////// */
 
 .works{
-    width: 98%;
+    width: 100%;
     padding: 0.5rem ;
     gap: 10px;
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    justify-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .work{
     width: 90%;
-    height: 280px;
+    /* height: 280px; */
     padding-bottom: 10px;
     border-radius: 5px;
     cursor: pointer;
@@ -93,10 +106,7 @@
     background: #E7ECF0;
     transition: bottom .4s;
 }
-.work:hover {
-   position: relative;
-   bottom:  1px;
-}
+
 .work .work_img{
     display: flex;
     justify-content: center;
@@ -145,17 +155,13 @@
 
 @media screen and (min-width: 425px){
     .container .works{
-        width: 100%;
-        padding: 15px;
-        gap: 10px;
-        grid-template-columns: repeat(1, 1fr);
-        justify-items: center;
+        flex-direction: row;
+        align-items: normal;
+        justify-content: center;
+        flex-wrap: wrap;
     }
     .container .work{
-        width: 340px;
-        height: 340px;
-        padding: 10px;
-        border-radius: 5px;
+        width: 48%;
     }
 }
 
@@ -176,19 +182,7 @@
         width: 100%;
         padding: 10px;
     }
-    .container .works{
-        width: 100%;
-        padding: 15px;
-        gap: 10px;
-        grid-template-columns: repeat(2, 1fr);
-        justify-items: center;
-    }
-    .container .work{
-        width: 340px;
-        height: 340px;
-        padding: 10px;
-        border-radius: 5px;
-    }
+ 
     .work h2{
         font-family: "Jost", sans-serif;
         font-size: 20px;
@@ -219,16 +213,10 @@
         font-weight: 600;
     }
     .container .works{
-        width: 100%;
-        padding: 10px;
-        gap: 10px;
-        grid-template-columns: repeat(3, 1fr);
-        justify-items: center;
+        gap: 1rem;
     }
     .container .work{
-        width: 310px;
-        height: 320px;
-        padding: 10px;
-        border-radius: 5px;
+        width: 32%;
+        height: 360px;
     }
 }
