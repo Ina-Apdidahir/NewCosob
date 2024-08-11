@@ -65,10 +65,9 @@ function ServiceSection() {
 
     useEffect(() => {
         const handleScroll = () => {
-            const AnimationElment = document.querySelectorAll(`.${styles.Scale}`);
-            const HMrelements = document.querySelectorAll(`.${styles.Head_master}`);
+            const scaleelements = document.querySelectorAll(`.${styles.Scale}`);
 
-            AnimationElment.forEach((el) => {
+            scaleelements.forEach((el) => {
                 const rect = el.getBoundingClientRect();
                 const partiallyInView = rect.top < window.innerHeight && rect.bottom > 0;
 
@@ -78,17 +77,7 @@ function ServiceSection() {
                     el.classList.remove(styles.visible);
                 }
             });
-
-            HMrelements.forEach((el) => {
-                const rect = el.getBoundingClientRect();
-                const partiallyInView = rect.top < window.innerHeight && rect.bottom > 0;
-
-                if (partiallyInView) {
-                    el.classList.add(styles.visible);
-                } else {
-                    el.classList.remove(styles.visible);
-                }
-            });
+         
         };
 
         window.addEventListener('scroll', handleScroll);

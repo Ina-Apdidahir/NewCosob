@@ -163,7 +163,7 @@ function Footer() {
                     </div>
 
                     <div className={styles.Inputs_box}>
-                        <div className={` ${styles.box_r} ${styles.Scale}`}>
+                        <div className={styles.box_r}>
                             <div className={styles.form_box}  >
                                 <div className={styles.form_title}>
                                     <h2>Get in touch</h2>

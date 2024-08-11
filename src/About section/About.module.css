@@ -50,32 +50,32 @@
 
 
 .from_left:nth-child(1) {
-    transform: translateX(-100vw);
+     transform: scale(0.7);
     transition: all 0.8s ease-out;
 }
 
 .from_left:nth-child(2) {
-    transform: translateX(-100vw);
+     transform: scale(0.7);
     transition: all 1s ease-out;
 }
 
 .from_left:nth-child(3) {
-    transform: translateX(-100vw);
+     transform: scale(0.7);
     transition: all 1.2s ease-out;
 }
 
 .from_left:nth-child(4) {
-    transform: translateX(-100vw);
+     transform: scale(0.7);
     transition: all 1.4s ease-out;
 }
 .from_left:nth-child(5) {
-    transform: translateX(-100vw);
+     transform: scale(0.7);
     transition: all 1.4s ease-out;
 }
 
 .from_left.visible {
     opacity: 1;
-    transform: translateX(0);
+    transform: scale(1);
 }
 
 /* \\\\\\\\\\\\\\\  Transitions  \\\\\\\\\\\\\\\\\\\ */
@@ -217,29 +217,6 @@
         padding: 0;
     }
 
-    .from_left:nth-child(1) {
-        transform: translateX(-100vw);
-        transition: all 0.8s ease-out;
-    }
-    
-    .from_left:nth-child(2) {
-        transform: translateX(100vw);
-        transition: all 1s ease-out;
-    }
-    
-    .from_left:nth-child(3) {
-        transform: translateX(-100vw);
-        transition: all 1.2s ease-out;
-    }
-    
-    .from_left:nth-child(4) {
-        transform: translateX(100vw);
-        transition: all 1.4s ease-out;
-    }
-    .from_left.visible {
-        opacity: 1;
-        transform: translateX(0);
-    }
 }
 
 @media screen and (min-width: 768px) {
@@ -291,34 +268,6 @@
         padding: 0.3rem 0;
     }
 
-    .from_left:nth-child(1) {
-        transform: translateX(100vw);
-        transition: all 0.8s ease-out;
-    }
-    
-    .from_left:nth-child(2) {
-        transform: translateX(100vw);
-        transition: all 1s ease-out;
-    }
-    
-    .from_left:nth-child(3) {
-        transform: translateX(100vw);
-        transition: all 1.2s ease-out;
-    }
-    
-    .from_left:nth-child(4) {
-        transform: translateX(100vw);
-        transition: all 1.4s ease-out;
-    }
-    .bottom .from_left:nth-child(1) {
-        transform: translateX(-100vw);
-        transition: all 1.4s ease-out;
-    }
-    .bottom .from_left.visible,
-    .from_left.visible {
-        opacity: 1;
-        transform: translateX(0);
-    }
 }
 
 @media screen and (min-width: 1024px) {

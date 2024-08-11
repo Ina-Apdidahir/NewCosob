@@ -15,14 +15,12 @@ const Details = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 1024);
 
-    // Ensure this hook is never conditional
     useEffect(() => {
         const handleResize = () => setIsSmallScreen(window.innerWidth < 1024);
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    // Data fetching hook
     useEffect(() => {
         const query = `*[ _type == "service" && slug.current == $slug ] {
             title,
@@ -53,7 +51,6 @@ const Details = () => {
             });
     }, [slug]);
 
-    // Slider controls
     const handleNext = () => {
         if (selectedService && selectedService.serviceImages.length > 0) {
             setCurrentIndex((prevIndex) => (prevIndex + 1) % selectedService.serviceImages.length);
@@ -66,78 +63,45 @@ const Details = () => {
         }
     };
 
+    useEffect(() => {
+        const handleScroll = () => {
+            const scaleelements = document.querySelectorAll(`.${styles.Scale}`);
 
-    // ________________________________ Scroll Events _____________________________\\
+            scaleelements.forEach((el) => {
+                const rect = el.getBoundingClientRect();
+                const partiallyInView = rect.top < window.innerHeight && rect.bottom > 0;
 
-    // Scroll animation hook
-    if (!isLoading) {
-        useEffect(() => {
-            const handleScroll = () => {
-                const SlideElment = document.querySelectorAll(`.${styles.LeftSlide}`);
-                const Scaleelements = document.querySelectorAll(`.${styles.Scale}`);
-                const HMrelements = document.querySelectorAll(`.${styles.Head_master}`);
+                if (partiallyInView) {
+                    el.classList.add(styles.visible);
+                } else {
+                    el.classList.remove(styles.visible);
+                }
+            });
+         
+        };
 
-                SlideElment.forEach((el) => {
-                    const rect = el.getBoundingClientRect();
-                    const partiallyInView = rect.top < window.innerHeight && rect.bottom > 0;
+        window.addEventListener('scroll', handleScroll);
+        handleScroll(); // Run the function once to check the visibility on load
 
-                    if (partiallyInView) {
-                        el.classList.add(styles.visible);
-                    } else {
-                        el.classList.remove(styles.visible);
-                    }
-                });
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
-                Scaleelements.forEach((el) => {
-                    const rect = el.getBoundingClientRect();
-                    const partiallyInView = rect.top < window.innerHeight && rect.bottom > 0;
-
-                    if (partiallyInView) {
-                        el.classList.add(styles.visible);
-                    } else {
-                        el.classList.remove(styles.visible);
-                    }
-                });
-
-                HMrelements.forEach((el) => {
-                    const rect = el.getBoundingClientRect();
-                    const partiallyInView = rect.top < window.innerHeight && rect.bottom > 0;
-
-                    if (partiallyInView) {
-                        el.classList.add(styles.visible);
-                    } else {
-                        el.classList.remove(styles.visible);
-                    }
-                });
-            };
-
-            window.addEventListener('scroll', handleScroll);
-            handleScroll(); // Run the function once to check the visibility on load
-
-            return () => {
-                window.removeEventListener('scroll', handleScroll);
-            };
-        }, []);
-    } else {
-        return <div>Loading...</div>;
-    }
-
-    // ________________________________ Scroll Events _____________________________\\
-
-
-    // Serializer for PortableText
     const serializers = {
         types: {
             space: ({ node }) => {
                 if (!node || !node.height) {
                     return <div className={styles.space} />;
                 }
-                return <div style={{ height: node.height }} className={styles.space} />;
+                return <div style={{ height: node.height }} className={styles.space} />
             }
         },
     };
 
-
+    if (isLoading) {
+        return <div>Loading...</div>;
+    }
 
     if (error) {
         return <div>Error: {error.message}</div>;
@@ -153,8 +117,8 @@ const Details = () => {
                 <h1>{selectedService.title}</h1>
             </div>
             <div className={styles.conetnts}>
-                <h2 className={styles.LeftSlide}>{selectedService.title}</h2>
-                <p className={styles.LeftSlide}>{selectedService.description}</p>
+                <h2 className={styles.Scale}>{selectedService.title}</h2>
+                <p className={styles.Scale}>{selectedService.description}</p>
                 <div className={styles.content_Detail}>
                     <div className={styles.Images_container}>
                         <button
@@ -195,7 +159,7 @@ const Details = () => {
                             ))}
                         </div>
 
-                        <div className={`${styles.dot_indicators} ${styles.Scale} ${isSmallScreen ? styles.hide_dot_indicators : ''}`}>
+                        <div className={`${styles.dot_indicators} ${styles.Scale} ${!isSmallScreen ? '' : styles.hide_dot_indicators}`}>
                             {selectedService.serviceImages.map((_, idx) => (
                                 <div
                                     key={idx}
