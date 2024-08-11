@@ -9,7 +9,15 @@
     overflow: hidden;
 }
 
-
+.Scale{
+    transform: scale(0.7);
+    opacity: 0;
+    transition: all 1.2s ease-out;
+}
+.Scale.visible {
+    opacity: 1;
+    transform: scale(1);
+}
 
 .service_container{
     width: 95%;
@@ -85,15 +93,7 @@
 .Service .Image .img {
     max-width: 60%;
 }
-.Scale{
-    transform: scale(0.7);
-    opacity: 0;
-    transition: all 1.2s ease-out;
-}
-.Scale.visible {
-    opacity: 1;
-    transform: scale(1);
-}
+
 
 .Service .texts {
     width: 100%;

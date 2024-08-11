@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'jost', sans-serif;
 }
 
 html {
@@ -11,7 +11,7 @@ html {
 
 body {
   width: 100%;
-  background: #E7ECF0;
+  background: #E7EFF1;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -64,29 +64,35 @@ function ServiceSection() {
 
 
     useEffect(() => {
-        const handleScroll = () => {
-            const scaleelements = document.querySelectorAll(`.${styles.Scale}`);
-
-            scaleelements.forEach((el) => {
-                const rect = el.getBoundingClientRect();
-                const partiallyInView = rect.top < window.innerHeight && rect.bottom > 0;
-
-                if (partiallyInView) {
-                    el.classList.add(styles.visible);
-                } else {
-                    el.classList.remove(styles.visible);
-                }
-            });
-         
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add(styles.visible);
+                    } else {
+                        entry.target.classList.remove(styles.visible);
+                    }
+                });
+            },
+            { threshold: 0.1 }
+        );
+    
+        const observeElements = () => {
+            const elements = document.querySelectorAll(`.${styles.Scale}`);
+            // console.log("Elements found:", elements.length);
+            elements.forEach((el) => observer.observe(el));
         };
-
-        window.addEventListener('scroll', handleScroll);
-        handleScroll(); // Run the function once to check the visibility on load
-
+    
+        observeElements(); // Initial run
+        const observerMutation = new MutationObserver(observeElements);
+        observerMutation.observe(document.body, { childList: true, subtree: true });
+    
         return () => {
-            window.removeEventListener('scroll', handleScroll);
+            observer.disconnect();
+            observerMutation.disconnect();
         };
     }, []);
+    
 
     /////////// ..... ___________   Handle scroll   Events of ____________  .... //////////////
 

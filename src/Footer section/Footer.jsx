@@ -189,7 +189,7 @@ function Footer() {
                                         <label ></label>
                                         <textarea ref={messageInputRef} name="user_message" id="" className={`${styles.Text_Area} ${styles.LeftSlide}`} rows="10" placeholder="your Message.." required></textarea>
                                     </div>
-                                    <button type="submit" className={` ${styles.btn_send} ${styles.Scale}`}>Contact us</button>
+                                    <button type="submit" className={` ${styles.btn_send} ${styles.Scale}`}>Send</button>
                                 </form>
                             </div>
 

@@ -82,11 +82,11 @@ function Bottom_Foter() {
 
                 <div className={styles.copyright}>
                     <div className={styles.box}>
-                        <p className= {` ${styles.copyrightText}${styles.Scale}`}>Copyright © 2024 by <a href="#">Cosob Media works</a>. All rights reserved.</p>
+                        <p className= {` ${styles.copyrightText} ${styles.Scale}`}>Copyright © 2024 by <a href="#">Cosob Media works</a>. All rights reserved.</p>
                     </div>
                     <div className={styles.box}>
                         <ul className={styles.social_icons}>
-                            <li><a  className={styles.Scale} href="">Powered by Hiil Digital Services</a></li>
+                            <li><a  className={styles.Scale} href="">Powered by Cosob Media Works</a></li>
                         </ul>
                     </div>
                 </div>
