@@ -11,6 +11,18 @@
 
 
 /* \\\\\\\\\\ scroll \\\\\\\\\\\ */
+
+.Scale{
+    transform: scale(0.7);
+    opacity: 0;
+    transition: all 1.2s ease-out;
+}
+.Scale.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+
 .LeftSlide{
     opacity: 0;
     transition: all 1.2s ease-out;
@@ -218,6 +230,7 @@ form {
     width: 100%;
     border-bottom: 1px solid #243858;
     position: relative;
+    overflow: hidden;
 }
 
 .message_input .Text_Area {
@@ -237,6 +250,7 @@ form {
     padding: 0.75rem 0rem;
     border-bottom: 1px solid #243858;
     border-radius: 1px;
+    overflow: hidden;
 }
 
 .contact .box_input:nth-child(3) {

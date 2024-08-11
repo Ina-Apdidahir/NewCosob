@@ -9,6 +9,45 @@
     overflow: hidden;
 }
 
+
+
+/* /////////  Scroll Animations ///////////////// */
+.Scale{
+    transform: scale(0.7);
+    opacity: 0;
+    transition: all 1.2s ease-out;
+}
+.Scale.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.LeftSlide{
+    opacity: 0;
+    transition: all 1.2s ease-out;
+    position: relative;
+    transform: translateX(-100vw);
+}
+.LeftSlide.visible{
+    opacity: 1;
+    transform: translateX(0);
+}
+.Head_master {
+    opacity: 0;
+    transition: all 1s ease-in-out;
+    position: relative;
+    top: -5rem;
+}
+
+.Head_master.visible {
+    opacity: 1;
+    top: 0rem;
+}
+
+
+/* /////////  Scroll Animations ///////////////// */
+
+
 .content_Detail {
     width: 100%;
     display: flex;
@@ -32,9 +71,7 @@
     scrollbar-width: none;
     display: flex;
     justify-content: center;
-    /* Arrange reviews horizontallymax */
     transition: transform 0.5s ease-in-out;
-    /* Smooth transition for sliding */
     gap: 60px;
 }
 
@@ -52,7 +89,7 @@
     cursor: pointer;
     position: absolute;
     top: 40%;
-    padding: 7px 5px;
+    padding: 0.5rem;
     border: none;
     background-color: rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(4px);
@@ -305,8 +342,15 @@
 
 @media screen and (min-width: 1024px) {
 
+    .dot_indicators {
+        position: absolute;
+        bottom: 1rem;
+    }
+
     .Blog_body {
         display: flex;
+        flex-direction: column;
+        gap: 1rem;
         width: 48%;
     }
 

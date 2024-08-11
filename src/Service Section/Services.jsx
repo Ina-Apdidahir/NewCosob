@@ -102,6 +102,18 @@ function ServiceSection() {
     /////////// ..... ___________   Handle scroll   Events of ____________  .... //////////////
 
 
+    if (isLoading) {
+        return <div>Loading...</div>;
+    }
+
+    if (error) {
+        return <div>Error: {error.message}</div>;
+    }
+
+    if (!services) {
+        return <div>Service not found</div>;
+    }
+
     return (
         <div className={styles.container}>
             <div className={Head_master}>

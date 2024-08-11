@@ -9,6 +9,8 @@
     margin-bottom: 30px;
 }
 
+
+/* /////////  Scroll Animations ///////////////// */
 .Scale{
     transform: scale(0.7);
     opacity: 0;
@@ -40,6 +42,8 @@
     right: 0;
 }
 
+
+/* /////////  Scroll Animations ///////////////// */
 
 
 .head_cont {

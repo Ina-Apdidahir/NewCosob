@@ -77,7 +77,7 @@ function Footer() {
 
     // /////////////>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-    //////////////////    ____________  Scroll Animations _____________////////////
+     //_____________________  Scroll Animations ____________________________\\
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -96,13 +96,13 @@ function Footer() {
         const elements = document.querySelectorAll(`.${styles.Scale}`);
         elements.forEach((el) => observer.observe(el));
 
-
-
         const LeftSlide = document.querySelectorAll(`.${styles.LeftSlide}`);
         LeftSlide.forEach((el) => observer.observe(el));
 
         const rightSlide = document.querySelectorAll(`.${styles.rightSlide}`);
         rightSlide.forEach((el) => observer.observe(el));
+
+
         return () => {
             if (observer) {
                 observer.disconnect();
@@ -111,7 +111,7 @@ function Footer() {
     }, []);
 
 
-    //////////////////    ____________  Scroll Animations _____________////////////
+    //_____________________  Scroll Animations ____________________________\\
 
 
 
@@ -163,33 +163,33 @@ function Footer() {
                     </div>
 
                     <div className={styles.Inputs_box}>
-                        <div className={styles.box_r}>
-                            <div className={styles.form_box}>
+                        <div className={` ${styles.box_r} ${styles.Scale}`}>
+                            <div className={styles.form_box}  >
                                 <div className={styles.form_title}>
                                     <h2>Get in touch</h2>
                                 </div>
                                 <div className={styles.success} ref={succmessagetRef}>
                                     <p>Message Sent Succesfully</p>
                                 </div>
-                                <form ref={form} method="post" id="contact-form" onSubmit={handleSubmit}>
+                                <form ref={form} method="post"  onSubmit={handleSubmit}>
                                     <div className={styles.one_line}>
                                         <div className={styles.box_input}>
-                                            <input ref={nameInputRef} type="text" name="user_name" id="" className={styles.text} placeholder="Full Name.." required />
+                                            <input ref={nameInputRef} type="text" name="user_name" className={`${styles.text} ${styles.LeftSlide}`} placeholder="Full Name.." required />
                                         </div>
                                         <div className={styles.box_input}>
-                                            <input ref={phoneInputRef} type="tel" name="user_phone" id="" className={styles.text} placeholder="your phone.." required />
+                                            <input ref={phoneInputRef} type="tel" name="user_phone" className={`${styles.text} ${styles.LeftSlide}`} placeholder="your phone.." required />
                                         </div>
                                     </div>
 
                                     <div className={styles.box_input}>
-                                        <input ref={emailInputRef} type="email" name="user_email" id="" className={styles.text} placeholder="your email.." required />
+                                        <input ref={emailInputRef} type="email" name="user_email" id="" className={`${styles.text} ${styles.LeftSlide}`} placeholder="your email.." required />
                                     </div>
 
                                     <div className={styles.message_input}>
                                         <label ></label>
-                                        <textarea ref={messageInputRef} name="user_message" id="" className={styles.Text_Area} rows="10" placeholder="your Message.." required></textarea>
+                                        <textarea ref={messageInputRef} name="user_message" id="" className={`${styles.Text_Area} ${styles.LeftSlide}`} rows="10" placeholder="your Message.." required></textarea>
                                     </div>
-                                    <button type="submit" className={styles.btn_send}>Contact us</button>
+                                    <button type="submit" className={` ${styles.btn_send} ${styles.Scale}`}>Contact us</button>
                                 </form>
                             </div>
 

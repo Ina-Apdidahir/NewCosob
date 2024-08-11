@@ -8,6 +8,18 @@
     overflow: hidden;
 }
 
+/* \\\\\\\\\\ scroll \\\\\\\\\\\ */
+
+.Scale{
+    transform: scale(0.7);
+    opacity: 0;
+    transition: all 1.2s ease-out;
+}
+.Scale.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
 
 .footer {
     background-color: #FFFFFF;
