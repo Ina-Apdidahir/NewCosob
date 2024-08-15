@@ -60,7 +60,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 5px;
+    padding: 0.7rem 1.3rem;
 }
 .workNavigations{
     padding: 0;
@@ -92,12 +92,11 @@
     padding: 10px 20px;
     border: none;
     outline: none;
-    border-bottom: 1px solid #919191;
-    color: #919191;
+    border-bottom: 1px solid #919191ba;
+    background-color: #E7EFF1F0;
 }
 .selection option{
     padding: 10px 10p 10px 0;
-    color: #081010;
 }
 
 /* /////////////// Hiden side ///////////////// */

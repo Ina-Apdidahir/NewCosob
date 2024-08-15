@@ -63,36 +63,7 @@ const Details = () => {
         }
     };
 
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add(styles.visible);
-                    } else {
-                        entry.target.classList.remove(styles.visible);
-                    }
-                });
-            },
-            { threshold: 0.1 }
-        );
-    
-        const observeElements = () => {
-            const elements = document.querySelectorAll(`.${styles.Scale}`);
-            console.log("Elements found:", elements.length);
-            elements.forEach((el) => observer.observe(el));
-        };
-    
-        observeElements(); // Initial run
-        const observerMutation = new MutationObserver(observeElements);
-        observerMutation.observe(document.body, { childList: true, subtree: true });
-    
-        return () => {
-            observer.disconnect();
-            observerMutation.disconnect();
-        };
-    }, []);
-
+ c
     const serializers = {
         types: {
             space: ({ node }) => {
